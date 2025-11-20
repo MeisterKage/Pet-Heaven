@@ -1,0 +1,128 @@
+.navbar {
+    background: var(--surface-color);
+    box-shadow: var(--shadow-md);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: var(--text-xl);
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition-normal);
+    padding: 0.5rem 0;
+}
+
+.nav-link:hover {
+    color: var(--secondary-color);
+}
+
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user-menu span {
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+}
+
+.btn-logout {
+    background: var(--error-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-size: var(--text-sm);
+    transition: all var(--transition-normal);
+}
+
+.btn-logout:hover {
+    background: #c82333;
+}
+
+.auth-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.auth-links a {
+    padding: 0.5rem 1.5rem;
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: var(--text-sm);
+    transition: all var(--transition-normal);
+    border: 2px solid var(--primary-color);
+}
+
+.auth-links a[href="/login"] {
+    background: transparent;
+    color: var(--primary-color);
+}
+
+.auth-links a[href="/login"]:hover {
+    background: var(--primary-color);
+    color: var(--surface-color);
+}
+
+.auth-links a[href="/signup"] {
+    background: var(--primary-color);
+    color: var(--surface-color);
+}
+
+.auth-links a[href="/signup"]:hover {
+    background: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .user-menu,
+    .auth-links {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .auth-links a {
+        text-align: center;
+        padding: 0.75rem 1.5rem;
+    }
+}
